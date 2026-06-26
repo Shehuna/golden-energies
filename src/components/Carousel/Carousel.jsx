@@ -5,7 +5,7 @@ const Carousel = () => {
   const slides = [
     {
       id: 1,
-      title: 'State-of-the-Art Oil Refinery',
+      title: 'Premium Fuels and Lubricants',
       subtitle: 'Golden Energies operates modern refineries with cutting-edge technology for superior fuel production',
       image: 'https://remsausainc.com/wp-content/uploads/AdobeStock_245252401-1536x1024.jpeg.webp'
     },
@@ -50,7 +50,7 @@ const Carousel = () => {
             <div className="carousel-content">
               <h1>{slide.title}</h1>
               <p>{slide.subtitle}</p>
-              <button className="carousel-cta">Learn More</button>
+              <button className="carousel-cta">Request for Quote</button>
             </div>
           </div>
         ))}
