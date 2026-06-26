@@ -11,7 +11,7 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="about-us-page white-bg-page">
+    <div>
       {/* Hero Section */}
       <section className="about-hero">
         <div className="about-hero-content">

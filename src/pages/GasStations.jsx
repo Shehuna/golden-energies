@@ -60,7 +60,7 @@ const GasStations = () => {
   ];
 
   return (
-    <div className="gas-stations-page white-bg-page">
+    <div >
       {/* Hero Section */}
       <section className="gs-hero">
         <div 
