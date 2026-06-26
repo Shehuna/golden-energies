@@ -4,7 +4,7 @@ import './GasStations.css';
 import gasStationImage from '../assets/gas-station.png';
 
 // Import station images
-import assasaImg from '../assets/Assasa.png';
+import assasaImg from '../assets/assasa.png';
 import bodetiImg from '../assets/Bodeti.png';
 import azernetImg from '../assets/Azernet.png';
 import gelanImg from '../assets/Gelan.png';
