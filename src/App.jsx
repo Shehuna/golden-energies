@@ -32,8 +32,9 @@ function App() {
                 <Carousel />
                 <WhoWeAre /> 
                 <PremiumQuote />
+                <SupplyChainSection />
                 <ProductsServicesSection />
-                {/* <SupplyChainSection /> */}
+                
                 {/* <WhyChooseUs /> */}
                 <FindStation />
                 <ClientPartners />

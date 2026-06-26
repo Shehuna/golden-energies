@@ -2,117 +2,151 @@
 .supply-chain {
   padding: 5rem 2rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative Background Elements */
+.supply-chain::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(32, 116, 214, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.supply-chain::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(183, 12, 5, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .supply-chain-container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-/* Section Header */
+/* ========== SECTION HEADER ========== */
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
-.section-badge {
-  display: inline-block;
-  background: #2074D6;
-  color: #ffffff;
-  padding: 0.3rem 1.5rem;
-  border-radius: 50px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.section-title {
+.cs-section-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.3;
-  margin-bottom: 1rem;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .title-highlight {
-  color: #2074D6;
+  color: #B70C05;
   position: relative;
 }
 
 .title-highlight::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   width: 100%;
   height: 3px;
-  background: #F9862D;
+  background: linear-gradient(90deg, #F9862D, #B70C05);
   border-radius: 2px;
-  opacity: 0.5;
 }
 
-.section-description {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.05rem;
-  color: #6c757d;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-/* Process Steps */
+/* ========== PROCESS STEPS ========== */
 .process-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-bottom: 4rem;
+  gap: 1.5rem;
+  margin-bottom: 0;
   position: relative;
 }
 
 .step-item {
   background: #ffffff;
   padding: 2rem 1.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .step-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 }
 
+/* Step Number Badge */
 .step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #B70C05;
-  background: rgba(183, 12, 5, 0.1);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  display: inline-block;
-  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.step-content {
+  margin-top: 1.5rem;
+}
+
+.step-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  transition: all 0.4s ease;
+}
+
+.step-item:hover .step-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .step-icon {
   font-size: 2.5rem;
-  margin-bottom: 0.8rem;
+  display: block;
 }
 
-.step-item h3 {
+.step-content h3 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
 }
 
-.step-item p {
+.step-content p {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   color: #6c757d;
@@ -120,96 +154,99 @@
   margin: 0;
 }
 
+/* Step Connector */
 .step-connector {
-  display: none;
+  position: absolute;
+  top: 50%;
+  right: -1.5rem;
+  transform: translateY(-50%);
+  color: #2074D6;
+  opacity: 0.3;
+  width: 24px;
+  height: 24px;
 }
 
-/* Stats */
-.supply-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  background: linear-gradient(135deg, #0d3b6e 0%, #2074D6 100%);
-  padding: 3rem 2rem;
-  border-radius: 16px;
-}
-
-.stat-item {
-  text-align: center;
-  color: #ffffff;
-}
-
-.stat-number {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
+.step-connector svg {
+  width: 100%;
+  height: 100%;
   display: block;
-  margin-bottom: 0.3rem;
-  color: #F9862D;
 }
 
-.stat-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.85);
-}
+/* ========== RESPONSIVE ========== */
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
   .process-steps {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 
-  .supply-stats {
-    grid-template-columns: repeat(2, 1fr);
+  .step-connector {
+    display: none;
   }
 
-  .section-title {
-    font-size: 2.2rem;
+  .cs-section-title {
+    font-size: 2.4rem;
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .supply-chain {
     padding: 3rem 1.5rem;
   }
 
+  .cs-section-title {
+    font-size: 2rem;
+  }
+
   .process-steps {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 400px;
+    margin: 0 auto;
   }
 
-  .supply-stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    padding: 2rem 1.5rem;
+  .step-item {
+    padding: 1.5rem;
   }
 
-  .section-title {
-    font-size: 1.8rem;
+  .step-icon-wrapper {
+    width: 60px;
+    height: 60px;
   }
 
-  .section-description {
-    font-size: 0.95rem;
-  }
-
-  .stat-number {
+  .step-icon {
     font-size: 2rem;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    font-size: 0.75rem;
+    top: -12px;
+  }
+
+  .step-content h3 {
+    font-size: 1rem;
+  }
+
+  .step-content p {
+    font-size: 0.8rem;
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
-  .supply-stats {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .supply-chain {
+    padding: 2rem 1rem;
   }
 
-  .section-title {
-    font-size: 1.5rem;
+  .cs-section-title {
+    font-size: 1.6rem;
   }
 
-  .stat-number {
-    font-size: 1.8rem;
+  .process-steps {
+    max-width: 100%;
   }
 }
