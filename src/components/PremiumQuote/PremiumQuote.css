@@ -1,0 +1,201 @@
+/* src/components/PremiumQuote/PremiumQuote.css */
+.premium-quote {
+  background: #f5f7fa;
+  padding: 4rem 2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.premium-quote.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.premium-quote-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== QUOTE SECTION ========== */
+.quote-wrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.quote-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 2rem;
+  font-family: Georgia, serif;
+  font-weight: 500;
+  color: #000000;
+  line-height: 0.8;
+  opacity: 0.8;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.quote-mark-start {
+  margin-right: 0.2rem;
+  margin-left: -0.5rem;
+}
+
+.quote-mark-end {
+  margin-left: 0.2rem;
+  margin-right: -0.5rem;
+}
+
+/* ========== STATS SECTION ========== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.stat-item {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Stats become visible when parent has visible class */
+.premium-quote.visible .stat-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger the animation delay for each stat */
+.premium-quote.visible .stat-item:nth-child(1) { transition-delay: 0.1s; }
+.premium-quote.visible .stat-item:nth-child(2) { transition-delay: 0.2s; }
+.premium-quote.visible .stat-item:nth-child(3) { transition-delay: 0.3s; }
+.premium-quote.visible .stat-item:nth-child(4) { transition-delay: 0.4s; }
+
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #B70C05;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.pr-stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #6c757d;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .premium-quote {
+    padding: 3rem 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 1.3rem;
+  }
+
+  .quote-mark {
+    font-size: 3rem;
+  }
+
+  .stat-number {
+    font-size: 2.4rem;
+  }
+
+  .pr-stat-label {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .premium-quote {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .quote-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .quote-mark {
+    font-size: 2.5rem;
+  }
+
+  .quote-mark-start {
+    margin-left: -0.3rem;
+  }
+
+  .quote-mark-end {
+    margin-right: -0.3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .pr-stat-label {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .premium-quote {
+    padding: 2rem 1rem;
+  }
+
+  .quote-text {
+    font-size: 0.95rem;
+  }
+
+  .quote-mark {
+    font-size: 2rem;
+  }
+
+  .quote-mark-start {
+    margin-left: -0.2rem;
+  }
+
+  .quote-mark-end {
+    margin-right: -0.2rem;
+  }
+
+  .stats-grid {
+    gap: 1rem;
+    padding-top: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.6rem;
+  }
+
+  .pr-stat-label {
+    font-size: 0.7rem;
+  }
+}

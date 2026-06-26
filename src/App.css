@@ -1,0 +1,59 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Make carousel full width */
+.carousel-container {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  /* No padding needed as Navbar is absolute on hero sections */
+}
+
+/* Ensure proper spacing for all pages */
+.about-us-page {
+  padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}

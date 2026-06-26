@@ -1,0 +1,520 @@
+/* pages/AboutUs.css */
+
+.about-us-page {
+  padding-top: 0px;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2074D6 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about-hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.about-hero-content p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* ========== CEO MESSAGE SECTION ========== */
+.about-ceo {
+  padding: 5rem 0;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.ceo-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.ceo-image-wrapper {
+  text-align: center;
+}
+
+.ceo-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 5px solid #F9862D;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ceo-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ceo-name h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  margin-bottom: 0.25rem;
+}
+
+.ceo-name p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.ceo-message h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.ceo-message h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #F9862D;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.ceo-message p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
+
+.ceo-signature {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #1a1a2e;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.signature-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Story Section */
+.about-story {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #1a1a2e;
+  margin-bottom: 1.5rem;
+}
+
+.story-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
+
+.story-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item h3 {
+  font-size: 2rem;
+  color: #F9862D;
+  margin-bottom: 0.25rem;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Story Image Wrapper with Blend */
+.story-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.story-image-wrapper::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  background: linear-gradient(
+    to right,
+    #ffffff 0%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.story-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Mission & Vision Section */
+.about-mission-vision {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.mv-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mv-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.mv-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3rem;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+}
+
+.mv-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+.mv-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mv-card ul li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mv-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* Team Section */
+.about-team {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.about-team h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.team-subtitle {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.team-member {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid #F9862D;
+}
+
+.team-member h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #1a1a2e;
+  margin-bottom: 0.25rem;
+}
+
+.team-member p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* CTA Section */
+.about-cta {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #F9862D 0%, #2074D6 100%);
+  text-align: center;
+  color: #ffffff;
+}
+
+.about-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-cta p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  background: #ffffff;
+  color: #1a1a2e;
+  border: none;
+  padding: 1rem 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .about-hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .ceo-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .ceo-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .ceo-message h2::after {
+    margin: 0.5rem auto 0;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .story-image-wrapper::before {
+    display: none;
+  }
+
+  .story-image {
+    min-height: 300px;
+  }
+
+  .story-image img {
+    min-height: 300px;
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero-content p {
+    font-size: 1rem;
+  }
+
+  .ceo-message h2 {
+    font-size: 2rem;
+  }
+
+  .ceo-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .story-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .story-image {
+    min-height: 250px;
+  }
+
+  .story-image img {
+    min-height: 250px;
+  }
+
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about-cta h2 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about-hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .story-text h2 {
+    font-size: 2rem;
+  }
+
+  .ceo-message h2 {
+    font-size: 1.8rem;
+  }
+
+  .ceo-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .story-image {
+    min-height: 200px;
+  }
+
+  .story-image img {
+    min-height: 200px;
+  }
+
+  .ceo-name h3 {
+    font-size: 1.2rem;
+  }
+}

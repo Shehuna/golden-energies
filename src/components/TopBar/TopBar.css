@@ -1,0 +1,309 @@
+/* components/TopBar/TopBar.css */
+
+.topbar {
+  background: linear-gradient(135deg, #2074D6 0%, #1a5ba8 100%);
+  padding: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1001;
+}
+
+.topbar-container {
+  max-width: 1400px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+/* ========== LEFT SIDE ========== */
+.topbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Orange highlight for "just like our name" */
+.topbar-tagline-highlight {
+  color: #F9862D; /* Brand Orange */
+}
+
+/* ========== RIGHT SIDE ========== */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Vertical Divider Lines */
+.topbar-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+/* Contact Link */
+.topbar-contact {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0.6rem;
+}
+
+.topbar-contact:hover {
+  opacity: 0.8;
+}
+
+.topbar-icon {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.topbar-contact:hover .topbar-icon,
+.topbar-search:hover .topbar-icon {
+  transform: scale(1.1);
+}
+
+/* ========== ANIMATED TEXT - LEFT ALIGNED ========== */
+.topbar-animated-text-container {
+  height: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  min-width: 200px;
+}
+
+.topbar-animated-text-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.topbar-animated-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: left;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+/* Text 1 - Golden Energies */
+.topbar-text-1 {
+  animation: slideText1 6s ease-in-out infinite;
+}
+
+/* Text 2 - Your reliable energy provider */
+.topbar-text-2 {
+  animation: slideText2 6s ease-in-out infinite;
+}
+
+@keyframes slideText1 {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  5% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  45% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideText2 {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  55% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  95% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Search Button */
+.topbar-search {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.25rem 0.6rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.topbar-search:hover {
+  opacity: 0.8;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .topbar-container {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .topbar-tagline {
+    font-size: 0.75rem;
+  }
+
+  .topbar-animated-text {
+    font-size: 0.7rem;
+  }
+
+  .topbar-animated-text-container {
+    min-width: 160px;
+  }
+
+  .topbar-contact {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .topbar-search {
+    padding: 0.25rem 0.5rem;
+  }
+
+  .topbar-divider {
+    height: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .topbar {
+    height: 35px;
+  }
+
+  .topbar-container {
+    padding: 0 1rem;
+  }
+
+  .topbar-tagline {
+    font-size: 0.6rem;
+    letter-spacing: 0.3px;
+  }
+
+  .topbar-animated-text {
+    font-size: 0.6rem;
+  }
+
+  .topbar-animated-text-container {
+    height: 35px;
+    min-width: 130px;
+    padding: 0 0.3rem;
+  }
+
+  .topbar-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .topbar-contact {
+    padding: 0.25rem 0.4rem;
+  }
+
+  .topbar-search {
+    padding: 0.25rem 0.4rem;
+  }
+
+  .topbar-divider {
+    height: 14px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .topbar {
+    height: 30px;
+  }
+
+  .topbar-tagline {
+    font-size: 0.5rem;
+  }
+
+  .topbar-animated-text {
+    font-size: 0.5rem;
+  }
+
+  .topbar-animated-text-container {
+    height: 30px;
+    min-width: 100px;
+    padding: 0 0.2rem;
+  }
+
+  .topbar-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .topbar-contact {
+    padding: 0.25rem 0.3rem;
+  }
+
+  .topbar-search {
+    padding: 0.25rem 0.3rem;
+  }
+
+  .topbar-divider {
+    height: 12px;
+  }
+}
+
+/* Hide animated text on very small screens */
+@media (max-width: 480px) {
+  .topbar-animated-text-container {
+    display: none;
+  }
+}

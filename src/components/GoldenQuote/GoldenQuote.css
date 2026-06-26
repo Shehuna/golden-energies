@@ -1,0 +1,212 @@
+/* GoldenQuote.css */
+/* Brand Colors:
+   Primary Blue: #2074D6
+   Primary Red: #B70C05
+   Primary Orange: #F9862D
+*/
+
+.golden-quote-section {
+  position: relative;
+  padding: 2rem 2rem;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.golden-quote-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.golden-quote-content {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.golden-quote-content.animate {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* ========== ICON ========== */
+.golden-quote-icon {
+  display: inline-block;
+  font-size: 2rem;
+  color: #F9862D; /* Brand Orange */
+  margin-bottom: 0.3rem;
+  animation: spinIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+.golden-quote-content.animate .golden-quote-icon {
+  animation: spinIn 0.8s ease forwards;
+}
+
+@keyframes spinIn {
+  0% {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+/* ========== TEXT ========== */
+.golden-quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2074D6; /* Changed from #1a1a1a to Brand Blue */
+  margin-bottom: 0.75rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.3s;
+}
+
+.golden-quote-content.animate .golden-quote-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.golden-quote-text .golden-highlight {
+  color: #F9862D; /* Brand Orange */
+  position: relative;
+  display: inline-block;
+}
+
+.golden-quote-text .golden-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: rgba(249, 134, 45, 0.2);
+  border-radius: 4px;
+  z-index: -1;
+  animation: underlineGrow 0.8s ease forwards;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.golden-quote-content.animate .golden-highlight::after {
+  animation: underlineGrow 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes underlineGrow {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* ========== DECORATIVE LINE ========== */
+.golden-quote-line {
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #F9862D, transparent); /* Brand Orange */
+  margin: 0 auto;
+  border-radius: 2px;
+  transition: all 0.8s ease 0.5s;
+  opacity: 0;
+}
+
+.golden-quote-content.animate .golden-quote-line {
+  width: 100px;
+  opacity: 1;
+}
+
+/* ========== PARTICLE EFFECT ========== */
+.golden-quote-content.animate .golden-quote-text {
+  animation: textReveal 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .golden-quote-text {
+    font-size: 1.8rem;
+  }
+
+  .golden-quote-section {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .golden-quote-icon {
+    font-size: 1.6rem;
+  }
+
+  .golden-quote-content.animate .golden-quote-line {
+    width: 80px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .golden-quote-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .golden-quote-text {
+    font-size: 1.4rem;
+  }
+
+  .golden-quote-icon {
+    font-size: 1.4rem;
+  }
+
+  .golden-quote-content.animate .golden-quote-line {
+    width: 60px;
+  }
+
+  .golden-quote-text .golden-highlight::after {
+    height: 5px;
+    bottom: 3px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .golden-quote-section {
+    padding: 1rem 0.75rem;
+  }
+
+  .golden-quote-text {
+    font-size: 1.1rem;
+  }
+
+  .golden-quote-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .golden-quote-content.animate .golden-quote-line {
+    width: 50px;
+    height: 2px;
+  }
+
+  .golden-quote-text .golden-highlight::after {
+    height: 4px;
+    bottom: 2px;
+  }
+}

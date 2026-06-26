@@ -1,0 +1,215 @@
+/* src/components/SupplyChainSection/SupplyChainSection.css */
+.supply-chain {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.supply-chain-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-badge {
+  display: inline-block;
+  background: #2074D6;
+  color: #ffffff;
+  padding: 0.3rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.title-highlight {
+  color: #2074D6;
+  position: relative;
+}
+
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #F9862D;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.section-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Process Steps */
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.step-item {
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.step-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.step-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #B70C05;
+  background: rgba(183, 12, 5, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.step-item h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.step-item p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.step-connector {
+  display: none;
+}
+
+/* Stats */
+.supply-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  background: linear-gradient(135deg, #0d3b6e 0%, #2074D6 100%);
+  padding: 3rem 2rem;
+  border-radius: 16px;
+}
+
+.stat-item {
+  text-align: center;
+  color: #ffffff;
+}
+
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #F9862D;
+}
+
+.stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .supply-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .supply-chain {
+    padding: 3rem 1.5rem;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .supply-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .supply-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+}

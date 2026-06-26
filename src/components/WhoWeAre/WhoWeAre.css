@@ -1,0 +1,358 @@
+/* src/components/WhoWeAre/WhoWeAre.css */
+.who-we-are {
+  padding: 5rem 2rem;
+  background: #ffffff;
+}
+
+.who-we-are-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== LAYOUT ========== */
+.who-we-are-layout {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ========== LEFT COLUMN - CONTENT ========== */
+.who-we-are-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.section-badge {
+  display: inline-block;
+  background: #B70C05;
+  color: #ffffff;
+  padding: 0.3rem 1.5rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.title-highlight {
+  color: #B70C05;
+  position: relative;
+}
+
+.title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #F9862D;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.we-section-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #495057;
+  line-height: 1.8;
+  margin-bottom: 0.6rem;
+  text-align: left;
+  width: 100%;
+}
+
+/* Stats */
+.who-we-are-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #B70C05;
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-weight: 400;
+  margin-top: 0.2rem;
+}
+
+/* CTA Button */
+.who-we-are-cta {
+  background: #F9862D;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 25px rgba(249, 134, 45, 0.4);
+  width: fit-content;
+  margin-top: 0;
+}
+
+.who-we-are-cta:hover {
+  background: #e67a22;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 35px rgba(249, 134, 45, 0.5);
+}
+
+.cta-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.who-we-are-cta:hover .cta-arrow {
+  transform: translateX(5px);
+}
+
+/* ========== RIGHT COLUMN - IMAGE ========== */
+.who-we-are-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.who-we-are-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    rgba(183, 12, 5, 0.05) 0%,
+    rgba(32, 116, 214, 0.05) 100%
+  );
+  pointer-events: none;
+}
+
+.image-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: linear-gradient(135deg, #B70C05, #2074D6);
+  color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 8px 30px rgba(183, 12, 5, 0.3);
+}
+
+.badge-icon {
+  font-size: 1.8rem;
+}
+
+.badge-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet and Mobile - Center align */
+@media (max-width: 1024px) {
+  .who-we-are-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .who-we-are-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .we-section-description {
+    text-align: center;
+  }
+
+  .section-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .who-we-are-stats {
+    justify-content: center;
+  }
+
+  .who-we-are-cta {
+    margin: 0 auto;
+  }
+
+  .image-container {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .who-we-are-image {
+    height: 380px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .who-we-are {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .we-section-description {
+    font-size: 0.95rem;
+  }
+
+  .who-we-are-stats {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .who-we-are-cta {
+    margin-top: 0;
+  }
+
+  .who-we-are-image {
+    height: 300px;
+  }
+
+  .image-badge {
+    bottom: -15px;
+    right: -10px;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .badge-icon {
+    font-size: 1.5rem;
+  }
+
+  .badge-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .who-we-are {
+    padding: 2rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .we-section-description {
+    font-size: 0.9rem;
+  }
+
+  .who-we-are-stats {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.6rem;
+  }
+
+  .stat-item {
+    align-items: center;
+  }
+
+  .who-we-are-cta {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+    width: 100%;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .who-we-are-image {
+    height: 250px;
+  }
+
+  .image-badge {
+    bottom: -10px;
+    right: -5px;
+    padding: 0.6rem 1rem;
+  }
+
+  .badge-icon {
+    font-size: 1.2rem;
+  }
+
+  .badge-text {
+    font-size: 0.7rem;
+  }
+}

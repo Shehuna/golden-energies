@@ -1,0 +1,33 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1a1a1a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', 'Montserrat', serif;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Color variables for consistency */
+:root {
+  --primary-blue: #2074D6;
+  --primary-red: #B70C05;
+  --primary-orange: #F9862D;
+  --text-dark: #1a1a1a;
+  --text-light: #4a4a4a;
+  --bg-light: #f8f8f8;
+}

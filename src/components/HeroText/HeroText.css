@@ -1,0 +1,269 @@
+/* HeroText.css */
+/* Brand Colors:
+   Primary Blue: #2074D6
+   Primary Red: #B70C05
+   Primary Orange: #F9862D
+*/
+
+.hero-text-section {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* ========== WHITE SPACE ABOVE ========== */
+.hero-text-spacer {
+  height: 80px;
+  background: #ffffff;
+}
+
+/* ========== BACKGROUND IMAGE - OIL REFINERY ========== */
+.hero-text-background {
+  position: absolute;
+  top: 80px; /* Start after the spacer */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://cdn.catf.us/wp-content/uploads/2024/07/29182108/refinery-of-the-future-web.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 0;
+}
+
+/* Dark overlay for readability */
+.hero-text-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-text-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 4rem 2rem;
+}
+
+.hero-text-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 1rem 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-text-content.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== LEFT: TEXT ========== */
+.hero-text-left {
+  flex: 1;
+}
+
+.hero-text-paragraph {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #ffffff;
+  max-width: 800px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeInLeft 1s ease forwards;
+}
+
+.hero-text-content.animate .hero-text-paragraph {
+  animation: fadeInLeft 1s ease forwards;
+}
+
+/* ========== RIGHT: BUTTON ========== */
+.hero-text-right {
+  flex-shrink: 0;
+}
+
+.hero-text-button {
+  background: #F9862D;
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 20px rgba(249, 134, 45, 0.3);
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.hero-text-content.animate .hero-text-button {
+  animation: fadeInRight 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-text-button:hover {
+  background: #2074D6;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(32, 116, 214, 0.4);
+}
+
+.hero-text-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-text-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text-paragraph {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+
+  .hero-text-button {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-text-background {
+    background-attachment: scroll;
+  }
+
+  .hero-text-spacer {
+    height: 60px;
+  }
+
+  .hero-text-background {
+    top: 60px;
+  }
+
+  .hero-text-container {
+    padding: 3rem 1.5rem;
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-text-spacer {
+    height: 40px;
+  }
+
+  .hero-text-background {
+    top: 40px;
+  }
+
+  .hero-text-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-text-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .hero-text-button {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.85rem;
+  }
+
+  .hero-text-content {
+    gap: 1.5rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-text-spacer {
+    height: 30px;
+  }
+
+  .hero-text-background {
+    top: 30px;
+  }
+
+  .hero-text-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero-text-paragraph {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .hero-text-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-text-content {
+    gap: 1rem;
+  }
+}
