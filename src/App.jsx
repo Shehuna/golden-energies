@@ -17,6 +17,8 @@ import AboutUs from './pages/AboutUs';
 import ProductsServices from './pages/ProductsServices';
 import GasStations from './pages/GasStations';
 import ContactUs from './pages/ContactUs';
+import News from './pages/News';
+import Gallery from './pages/Gallery';
 import './App.css';
 
 function App() {
@@ -48,6 +50,8 @@ function App() {
             <Route path="/services" element={<ProductsServices />} />
             <Route path="/gas-stations" element={<GasStations />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </main>
         <Footer />

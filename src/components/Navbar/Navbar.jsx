@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown, Menu, X, Mail } from 'lucide-react';
+import { ChevronDown, Menu, X, Mail, Newspaper, Image, Film, FileText } from 'lucide-react';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 import logotext from '../../assets/logotext.png';
@@ -18,10 +18,28 @@ const Navbar = () => {
   const [hoverTimeout, setHoverTimeout] = useState(null);
 
   const navLinks = [
-    { label: 'Our Company', href: '/about', hasDropdown: true, dropdownId: 'who' },
-    { label: 'Products & Services', href: '#what-we-do', hasDropdown: true, dropdownId: 'what' },
-    { label: 'Gas Stations', href: '/gas-stations' },
-    { label: 'Media', href: '#newsroom' },
+    { 
+      label: 'Our Company', 
+      href: '/about', 
+      hasDropdown: true, 
+      dropdownId: 'who' 
+    },
+    { 
+      label: 'Products & Services', 
+      href: '#what-we-do', 
+      hasDropdown: true, 
+      dropdownId: 'what' 
+    },
+    { 
+      label: 'Gas Stations', 
+      href: '/gas-stations' 
+    },
+    { 
+      label: 'Media', 
+      href: '#media', 
+      hasDropdown: true, 
+      dropdownId: 'media' 
+    },
   ];
 
   const languages = [
@@ -112,31 +130,29 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map((link) => {
-            const Icon = link.icon;
             return (
               <li 
-                key={link.label || 'contact'}
+                key={link.label}
                 className={link.hasDropdown ? 'dropdown-trigger' : ''}
                 onMouseEnter={() => link.hasDropdown && handleDropdownEnter(link.dropdownId)}
                 onMouseLeave={() => link.hasDropdown && handleDropdownLeave()}
                 onClick={() => link.hasDropdown && handleMobileDropdownClick(link.dropdownId)}
               >
                 <Link to={link.href} onClick={() => setMobileMenuOpen(false)}>
-                  {Icon && <Icon size={20} className="nav-icon" />}
                   {link.label}
                   {link.hasDropdown && <ChevronDown size={14} className="dropdown-arrow" />}
                 </Link>
                 
-                {/* Dropdown for "Our Company" */}
+                {/* Dropdown for "Our Company" - UPDATED STYLE */}
                 {link.hasDropdown && link.dropdownId === 'who' && isDropdownOpen('who') && (
                   <div 
-                    className="dropdown-menu"
+                    className="dropdown-menu who-dropdown"
                     onMouseEnter={handleDropdownHover}
                     onMouseLeave={() => !isMobile() && setDropdownOpen(null)}
                   >
-                    <div className="dropdown-container">
-                      <div className="dropdown-column about-column">
-                        <div className="about-content">
+                    <div className="dropdown-container who-container">
+                      <div className="dropdown-column who-column">
+                        <div className="who-content">
                           <h3>About Us</h3>
                           <p>
                             Golden Energies was established in July 2022, by visionary Investors who had experiences exceeding more than 20 years in the sector, with a
@@ -153,17 +169,25 @@ const Navbar = () => {
 
                       <div className="dropdown-divider"></div>
 
-                      <div className="dropdown-column operations-column">
-                        <div className="operations-content">
-                          <h4>Our Operations</h4>
-                          <p>
-                            Golden Energies operates multiple fuel stations and a Large storage depot, ensuring a steady and
-                            reliable supply of petroleum products. 
+                      <div className="dropdown-column who-items-column">
+                        <div className="who-item">
+                          <div className="who-item-header">
+                            <span className="who-item-title">Our Operations</span>
+                            <ChevronDown size={16} className="who-arrow" />
+                          </div>
+                          <p className="who-item-description">
+                            Golden Energies operates multiple fuel stations and a Large storage depot, ensuring a steady and reliable supply of petroleum products.
                           </p>
                         </div>
-                        <div className="commitment-content">
-                          <h4>Our Commitment</h4>
-                          <ul className="choose-list">
+
+                        <div className="who-item-divider"></div>
+
+                        <div className="who-item">
+                          <div className="who-item-header">
+                            <span className="who-item-title">Our Commitment</span>
+                            <ChevronDown size={16} className="who-arrow" />
+                          </div>
+                          <ul className="who-list">
                             <li>✓ Providing superior-quality fuel & lubricants</li>
                             <li>✓ Enhancing customer experience with value-added services.</li>
                             <li>✓ Expanding our market reach while maintaining sustainability and efficiency.</li>
@@ -172,29 +196,36 @@ const Navbar = () => {
                         </div>
                       </div>
 
-                      <div className="dropdown-column choose-column">
-                        <h4>Why Choose Us</h4>
-                        <ul className="choose-list">
-                          <li>✓ Proven Industry Expertise</li>
-                          <li>✓ High-Quality Products</li>
-                          <li>✓ Customer-centric approach</li>
-                          <li>✓ Strategic Growth</li>
-                        </ul>
+                      <div className="dropdown-divider"></div>
+
+                      <div className="dropdown-column who-choose-column">
+                        <div className="who-item">
+                          <div className="who-item-header">
+                            <span className="who-item-title">Why Choose Us</span>
+                            <ChevronDown size={16} className="who-arrow" />
+                          </div>
+                          <ul className="who-list">
+                            <li>✓ Proven Industry Expertise</li>
+                            <li>✓ High-Quality Products</li>
+                            <li>✓ Customer-centric approach</li>
+                            <li>✓ Strategic Growth</li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
                 )}
 
-                {/* Dropdown for "Products & Services" - TWO COLUMNS */}
+                {/* Dropdown for "Products & Services" - UPDATED STYLE */}
                 {link.hasDropdown && link.dropdownId === 'what' && isDropdownOpen('what') && (
                   <div 
-                    className="dropdown-menu"
+                    className="dropdown-menu what-dropdown"
                     onMouseEnter={handleDropdownHover}
                     onMouseLeave={() => !isMobile() && setDropdownOpen(null)}
                   >
-                    <div className="dropdown-container two-columns">
-                      <div className="dropdown-column about-column">
-                        <div className="about-content">
+                    <div className="dropdown-container what-container">
+                      <div className="dropdown-column what-column">
+                        <div className="what-content">
                           <h3>Our Services</h3>
                           <p>
                             Golden Energies provides comprehensive energy solutions tailored 
@@ -212,20 +243,97 @@ const Navbar = () => {
 
                       <div className="dropdown-divider"></div>
 
-                      <div className="dropdown-column operations-column">
-                        <div className="operations-content">
-                          <h4>Fuel Supply & Distribution</h4>
-                          <p>
+                      <div className="dropdown-column what-items-column">
+                        <div className="what-item">
+                          <div className="what-item-header">
+                            <span className="what-item-title">Fuel Supply & Distribution</span>
+                            <ChevronDown size={16} className="what-arrow" />
+                          </div>
+                          <p className="what-item-description">
                             Reliable fuel supply chain management ensuring uninterrupted 
                             delivery of quality petroleum products to businesses and consumers.
                           </p>
                         </div>
-                        <div className="commitment-content">
-                          <h4>Lubricant & Grease Solutions</h4>
-                          <p>
+
+                        <div className="what-item-divider"></div>
+
+                        <div className="what-item">
+                          <div className="what-item-header">
+                            <span className="what-item-title">Lubricant & Grease Solutions</span>
+                            <ChevronDown size={16} className="what-arrow" />
+                          </div>
+                          <p className="what-item-description">
                             Premium quality lubricants and greases designed for optimal 
                             performance and extended equipment life across all industries.
                           </p>
+                        </div>
+
+                        <div className="what-item-divider"></div>
+
+                        <div className="what-item">
+                          <div className="what-item-header">
+                            <span className="what-item-title">Bulk Fuel Supply</span>
+                            <ChevronDown size={16} className="what-arrow" />
+                          </div>
+                          <p className="what-item-description">
+                            Large-scale fuel supply solutions for industrial, commercial, 
+                            and agricultural clients with reliable delivery systems.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Dropdown for "Media" */}
+                {link.hasDropdown && link.dropdownId === 'media' && isDropdownOpen('media') && (
+                  <div 
+                    className="dropdown-menu media-dropdown"
+                    onMouseEnter={handleDropdownHover}
+                    onMouseLeave={() => !isMobile() && setDropdownOpen(null)}
+                  >
+                    <div className="dropdown-container media-container">
+                      <div className="dropdown-column media-column">
+                        <div className="media-content">
+                          <h3>Media Center</h3>
+                          <p>
+                            Stay updated with the latest news, events, and insights from Golden Energies. 
+                            Explore our media resources and corporate communications.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="dropdown-divider"></div>
+
+                      <div className="dropdown-column media-items-column">
+                        <div className="media-item">
+                          <div className="media-item-header">
+                            <Newspaper size={20} className="media-icon" />
+                            <span className="media-item-title">News & Events</span>
+                            <ChevronDown size={16} className="media-arrow" />
+                          </div>
+                          <p className="media-item-description">
+                            Latest news, press releases, and company announcements from Golden Energies.
+                          </p>
+                          <Link to="/news" className="media-item-link" onClick={() => setMobileMenuOpen(false)}>
+                            View All News →
+                          </Link>
+                        </div>
+
+                        <div className="media-item-divider"></div>
+
+                        <div className="media-item">
+                          <div className="media-item-header">
+                            <Image size={20} className="media-icon" />
+                            <span className="media-item-title">Gallery</span>
+                            <ChevronDown size={16} className="media-arrow" />
+                          </div>
+                          <p className="media-item-description">
+                            Explore our visual journey through photos of our operations, events, and facilities.
+                          </p>
+                          <Link to="/gallery" className="media-item-link" onClick={() => setMobileMenuOpen(false)}>
+                            View Gallery →
+                          </Link>
                         </div>
                       </div>
                     </div>
