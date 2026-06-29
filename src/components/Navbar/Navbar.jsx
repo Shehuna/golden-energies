@@ -91,8 +91,11 @@ const Navbar = () => {
     }
   };
 
-  const handleMobileDropdownClick = (id) => {
+  const handleMobileDropdownClick = (id, e) => {
     if (isMobile()) {
+      e.preventDefault();
+      e.stopPropagation();
+      // Toggle the dropdown - if it's already open, close it; otherwise open it
       setMobileDropdownOpen(mobileDropdownOpen === id ? null : id);
     }
   };
@@ -130,21 +133,30 @@ const Navbar = () => {
         {/* Navigation Links */}
         <ul className={`navbar-links ${mobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map((link) => {
+            const isOpen = isDropdownOpen(link.dropdownId);
             return (
               <li 
                 key={link.label}
-                className={link.hasDropdown ? 'dropdown-trigger' : ''}
+                className={`dropdown-trigger ${isOpen ? 'open' : ''}`}
                 onMouseEnter={() => link.hasDropdown && handleDropdownEnter(link.dropdownId)}
                 onMouseLeave={() => link.hasDropdown && handleDropdownLeave()}
-                onClick={() => link.hasDropdown && handleMobileDropdownClick(link.dropdownId)}
               >
-                <Link to={link.href} onClick={() => setMobileMenuOpen(false)}>
+                <Link 
+                  to={link.href} 
+                  onClick={(e) => {
+                    if (link.hasDropdown && isMobile()) {
+                      handleMobileDropdownClick(link.dropdownId, e);
+                    } else {
+                      setMobileMenuOpen(false);
+                    }
+                  }}
+                >
                   {link.label}
                   {link.hasDropdown && <ChevronDown size={14} className="dropdown-arrow" />}
                 </Link>
                 
-                {/* Dropdown for "Our Company" - UPDATED STYLE */}
-                {link.hasDropdown && link.dropdownId === 'who' && isDropdownOpen('who') && (
+                {/* Dropdown for "Our Company" */}
+                {link.hasDropdown && link.dropdownId === 'who' && isOpen && (
                   <div 
                     className="dropdown-menu who-dropdown"
                     onMouseEnter={handleDropdownHover}
@@ -216,8 +228,8 @@ const Navbar = () => {
                   </div>
                 )}
 
-                {/* Dropdown for "Products & Services" - UPDATED STYLE */}
-                {link.hasDropdown && link.dropdownId === 'what' && isDropdownOpen('what') && (
+                {/* Dropdown for "Products & Services" */}
+                {link.hasDropdown && link.dropdownId === 'what' && isOpen && (
                   <div 
                     className="dropdown-menu what-dropdown"
                     onMouseEnter={handleDropdownHover}
@@ -286,7 +298,7 @@ const Navbar = () => {
                 )}
 
                 {/* Dropdown for "Media" */}
-                {link.hasDropdown && link.dropdownId === 'media' && isDropdownOpen('media') && (
+                {link.hasDropdown && link.dropdownId === 'media' && isOpen && (
                   <div 
                     className="dropdown-menu media-dropdown"
                     onMouseEnter={handleDropdownHover}

@@ -991,3 +991,177 @@ body.menu-open {
 .media-item:hover .media-arrow {
   transform: rotate(0deg) !important;
 }
+/* Add this to your existing Navbar.css - this fixes the mobile dropdown visibility */
+
+/* ========== MOBILE DROPDOWN FIX ========== */
+
+/* Hide dropdowns by default on mobile */
+@media (max-width: 992px) {
+  .dropdown-menu {
+    display: none !important;
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+    min-width: unset !important;
+    max-width: unset !important;
+    width: 100% !important;
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+    box-shadow: none !important;
+    background: #f8f8f8 !important;
+    border-radius: 8px !important;
+    border-top: none !important;
+  }
+
+  /* Show dropdown when parent has 'open' class on mobile */
+  .dropdown-trigger.open .dropdown-menu {
+    display: block !important;
+  }
+
+  /* Rotate chevron when dropdown is open on mobile */
+  .dropdown-trigger.open .dropdown-arrow {
+    transform: rotate(180deg) !important;
+  }
+
+  /* Ensure dropdown containers stack properly on mobile */
+  .dropdown-container {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    padding: 0 !important;
+  }
+
+  .dropdown-divider {
+    display: none !important;
+  }
+
+  .dropdown-column {
+    width: 100% !important;
+    flex: none !important;
+    padding: 0 !important;
+  }
+
+  /* Style dropdown items for mobile */
+  .who-item,
+  .what-item,
+  .media-item {
+    padding: 1rem !important;
+    background: #ffffff !important;
+    border-radius: 8px !important;
+    margin-bottom: 0.5rem !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .who-item:hover,
+  .what-item:hover,
+  .media-item:hover {
+    transform: none !important;
+    background: #f8fafc !important;
+  }
+
+  .who-item-description,
+  .what-item-description,
+  .media-item-description {
+    margin-left: 0 !important;
+    font-size: 0.85rem !important;
+  }
+
+  .media-item-link {
+    margin-left: 0 !important;
+    font-size: 0.85rem !important;
+  }
+
+  .who-list li {
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .who-arrow,
+  .what-arrow,
+  .media-arrow {
+    display: inline-block !important;
+  }
+
+  /* Ensure dropdowns are clickable on mobile */
+  .dropdown-trigger {
+    cursor: pointer !important;
+  }
+
+  .dropdown-trigger a {
+    pointer-events: auto !important;
+  }
+
+  /* Fix for dropdown content visibility */
+  .who-dropdown,
+  .what-dropdown,
+  .media-dropdown {
+    min-width: unset !important;
+    max-width: unset !important;
+    padding: 1rem !important;
+  }
+
+  /* Ensure all dropdown content is visible */
+  .who-content h3,
+  .what-content h3,
+  .media-content h3 {
+    font-size: 1.1rem !important;
+    color: #1a1a2e !important;
+  }
+
+  .who-content p,
+  .what-content p,
+  .media-content p {
+    font-size: 0.85rem !important;
+    color: #4a4a4a !important;
+  }
+
+  .who-item-title,
+  .what-item-title,
+  .media-item-title {
+    font-size: 0.95rem !important;
+    color: #1a1a2e !important;
+  }
+
+  .read-more-btn {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 1.5rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 576px) {
+  .who-item,
+  .what-item,
+  .media-item {
+    padding: 0.75rem !important;
+  }
+
+  .who-item-title,
+  .what-item-title,
+  .media-item-title {
+    font-size: 0.9rem !important;
+  }
+
+  .who-content h3,
+  .what-content h3,
+  .media-content h3 {
+    font-size: 1rem !important;
+  }
+
+  .who-content p,
+  .what-content p,
+  .media-content p,
+  .who-item-description,
+  .what-item-description,
+  .media-item-description {
+    font-size: 0.8rem !important;
+  }
+
+  .read-more-btn {
+    font-size: 0.8rem !important;
+    padding: 0.5rem 1.2rem !important;
+  }
+}
