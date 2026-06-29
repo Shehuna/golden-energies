@@ -11,20 +11,20 @@ const WhoWeAre = () => {
           {/* Left Column - Text Content */}
           <div className="who-we-are-content">
             
-            <h2 className="section-title">
+            <h2 className="wh-section-title">
               Powering Progress <br />
               <span className="title-highlight">Across Ethiopia</span>
             </h2>
             <p className="we-section-description">
-              Golden Energies is a leading importer and distributor of petroleum, 
-              oils, and lubricants in Ethiopia. With over three decades of experience, 
+              Golden Energies is one of the leading importer and distributor of petroleum, 
+              oils, and lubricants in Ethiopia. With over five years of experience, 
               we have established ourselves as a trusted partner in fuel supply, 
               distribution, and energy services across the nation.
             </p>
             
             <div className="who-we-are-stats">
               <div className="stat-item">
-                <span className="stat-number">35+</span>
+                <span className="stat-number">5+</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat-item">

@@ -40,7 +40,7 @@
   width: fit-content;
 }
 
-.section-title {
+.wh-section-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
@@ -56,17 +56,7 @@
   position: relative;
 }
 
-.title-highlight::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #F9862D;
-  border-radius: 2px;
-  opacity: 0.5;
-}
+
 
 .we-section-description {
   font-family: 'Montserrat', sans-serif;
@@ -218,7 +208,7 @@
     align-items: center;
   }
 
-  .section-title {
+  .wh-section-title {
     text-align: center;
   }
 
@@ -231,7 +221,7 @@
     margin-right: auto;
   }
 
-  .section-title {
+  .wh-section-title {
     font-size: 2.2rem;
   }
 
@@ -259,7 +249,7 @@
     padding: 3rem 1.5rem;
   }
 
-  .section-title {
+  .wh-section-title {
     font-size: 1.8rem;
   }
 
@@ -311,7 +301,7 @@
     padding: 2rem 1rem;
   }
 
-  .section-title {
+  .wh-section-title {
     font-size: 1.5rem;
   }
 
